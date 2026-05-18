@@ -15,4 +15,127 @@
 
 body {
     min-height: 100dvh;
+    font-family: "Anaheim";
+    color: white;
+    background-color: rgba(0, 0, 0, 0.8);
 }
+
+.header_main,
+.footer_main {
+    padding: 24px;
+    font-size: 72px;
+    text-align: center;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+
+    img {
+        width: 84px;
+    }
+}
+
+#book_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 32px;
+}
+
+.book_card {
+    width: 330px;
+    background-color: #0000009d;
+    border-radius: 16px;
+    padding: 16px;
+    margin: 16px;
+    border: 2px solid #ffffff;
+
+    h2 {
+        text-align: center;
+        font-size: 24px;
+    }
+
+    .book_img {
+        text-align: center;
+        margin: 24px;
+
+        img {
+            width: 150px;
+        }
+    }
+
+    .book_info_top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .price {
+        color: red;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .likes_container {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 24px;
+    }
+
+    .book_infos {
+        margin-top: 24px;
+    }
+
+    .comments_section {
+        margin-top: 24px;
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding-top: 16px;
+        max-height: 200px;
+        overflow-y: auto;
+    }
+
+    .single_comment {
+        margin-bottom: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding-bottom: 8px;
+    }
+
+    .comment_input {
+        display: flex;
+        margin-top: 16px;
+        font-size: 24px;
+        gap: 15px;
+
+        button {
+            bottom: 7px;
+        }
+    }
+
+    .comment_input input {
+        width: 100%;
+        padding: 8px;
+        border-radius: 8px;
+        border: none;
+        background-color: #00000093;
+        color: white;
+    }
+}
+
+.book_card:hover {
+    border: 2px solid #ff0000;
+}
+
+.comments_section::-webkit-scrollbar {
+    width: 4px;
+}
+
+.comments_section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.comments_section::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+}
+
