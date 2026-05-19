@@ -34,25 +34,34 @@ body {
     }
 }
 
-#book_container {
+.footer_content {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    padding: 32px;
+}
+
+#book_container{
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    justify-content: center;
+    gap: 24px;
+    padding: 50px;
 }
 
 .book_card {
-    width: 330px;
-    background-color: #0000009d;
-    border-radius: 16px;
-    padding: 16px;
-    margin: 16px;
-    border: 2px solid #ffffff;
+    width: 320px;
+    min-height: 700px;
+    background-color: #05070d;
+    border-radius: 24px;
+    border: 3px solid white;
+    padding: 24px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
     h2 {
         text-align: center;
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .book_img {
@@ -76,6 +85,10 @@ body {
         font-weight: bold;
     }
 
+    .heart {
+        cursor: pointer;
+    }
+
     .likes_container {
         display: flex;
         align-items: center;
@@ -85,6 +98,8 @@ body {
 
     .book_infos {
         margin-top: 24px;
+        margin-bottom: 16px;
+        gap: 20px;
     }
 
     .comments_section {
@@ -93,6 +108,11 @@ body {
         padding-top: 16px;
         max-height: 200px;
         overflow-y: auto;
+        flex: 1;
+
+        h3 {
+            padding-bottom: 10px;
+        }
     }
 
     .single_comment {
@@ -101,7 +121,7 @@ body {
         padding-bottom: 8px;
     }
 
-    .comment_input {
+    .comment_input_container {
         display: flex;
         margin-top: 16px;
         font-size: 24px;
@@ -109,21 +129,24 @@ body {
 
         button {
             bottom: 7px;
+            cursor: pointer;
         }
     }
 
-    .comment_input input {
-        width: 100%;
-        padding: 8px;
+    .comment_input {
         border-radius: 8px;
         border: none;
         background-color: #00000093;
+        padding: 8px 0 8px 8px;
         color: white;
+        font-size: 16px;
+        width: 350px;
+        width: 100%;
     }
 }
 
-.book_card:hover {
-    border: 2px solid #ff0000;
+.book_card:hover{
+    outline: 4px solid red;
 }
 
 .comments_section::-webkit-scrollbar {
