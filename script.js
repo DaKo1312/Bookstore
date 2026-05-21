@@ -22,6 +22,11 @@ function renderComments(comments) {
     return commentsHTML;
 }
 
+function updateComments(index) {
+    let commentsRef = document.getElementById(`comments_${index}`);
+    commentsRef.innerHTML = renderComments(books[index].comments);
+}
+
 function addLikeListener() {
     let heartRef = document.querySelectorAll('.heart');
     for (let index = 0; index < heartRef.length; index++) {
@@ -30,6 +35,17 @@ function addLikeListener() {
 
             toggleLike(bookIndex);
         });
+    }
+}
+
+function updateLike(index) {
+    let likeRef = document.getElementById(`like_count_${index}`);
+    let heartRef = document.getElementById(`heart_${index}`);
+    likeRef.innerHTML = books[index].likes;
+    if (books[index].liked) {
+        heartRef.innerHTML = '❤️';
+    } else {
+        heartRef.innerHTML = '🤍';
     }
 }
 
@@ -43,7 +59,7 @@ function toggleLike(index) {
     }
 
     saveToLocalStorage();
-    renderBooks();
+    updateLike(index);
 }
 
 function addComment(index) {
@@ -57,7 +73,7 @@ function addComment(index) {
             inputRef.value = '';
 
             saveToLocalStorage();
-            renderBooks();
+            updateComments(index);
         }
 }
 

@@ -10,8 +10,8 @@ function getBookTemplate(book, index) {
                     ${book.price.toFixed(2)} EUR
                 </span>
                 <div class="likes_container">
-                    <span>${book.likes}</span>
-                    <span class="heart"data-index="${index}">
+                    <span id="like_count_${index}">${book.likes}</span>
+                    <span id="heart_${index}" class="heart" data-index="${index}">
                     ${book.liked ? '❤️' : '🤍'}</span>
                 </div>
             </div>
@@ -22,7 +22,7 @@ function getBookTemplate(book, index) {
             </div>
             <div class="comments_section">
                 <h3>Kommentare:</h3>
-                ${renderComments(book.comments)}
+                <div id="comments_${index}">${renderComments(book.comments)}</div>
             </div>
             <div class="comment_input_container">
                 <input class="comment_input"id="comment_input_${index}"type="text"placeholder="Teile etwas mit ...">
